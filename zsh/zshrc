@@ -11,7 +11,7 @@ export MANPAGER="less -X";
 ZSH_THEME="robbyrussell"
 
 plugins=(
-  git
+  git zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -35,6 +35,8 @@ export FZF_DEFAULT_COMMAND="find . -path '*/\.*' -type d -prune -o -type f -prin
 HISTFILE=$HOME/.zsh_history
 SAVEHIST=5000
 HISTDUP=erase
+setopt NOBEEP
+setopt NOHISTBEEP
 setopt APPENDHISTORY
 setopt SHAREHISTORY
 setopt INCAPPENDHISTORY
