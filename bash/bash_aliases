@@ -1,0 +1,2 @@
+alias artisan="php artisan"
+alias branch="git branch -vv"

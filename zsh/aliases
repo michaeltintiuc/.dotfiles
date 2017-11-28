@@ -1,0 +1,6 @@
+alias vu="vagrant up"
+alias vs="vagrant ssh"
+alias vh="vagrant halt"
+alias artisan="php artisan"
+alias branch="git branch -vv"
+alias gstash="git stash --include-untracked"
