@@ -7,6 +7,8 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
 endif
 
 let mapleader=','
+filetype plugin indent on
+syntax enable
 
 " Nvim settings
 set number
@@ -29,6 +31,9 @@ set pumheight=15
 set completeopt=menuone,longest
 set list
 set listchars=tab:\ \ ,trail:•,extends:#,nbsp:. 
+set foldmethod=syntax
+set foldlevelstart=99
+set incsearch
 
 " Plugins
 call plug#begin('~/.config/nvim/plugged')
@@ -57,6 +62,7 @@ Plug 'jwalton512/vim-blade'
 call plug#end()
 
 " Plugin Configs
+let g:php_folding=2
 let base16colorspace=256
 let g:tmuxline_powerline_separators = 0
 let g:buftabline_show = 1
@@ -85,6 +91,16 @@ let g:deoplete#enable_at_startup = 1
 let g:deoplete#skip_chars = ['$']
 let g:deoplete#sources#padawan#add_parentheses = 1
 "let g:deoplete#sources#padawan#auto_update = 1
+
+" Copy to X
+set clipboard+=unnamed
+vnoremap <leader>y "+y
+nnoremap <leader>p "+p
+vnoremap <leader>p "+p
+vnoremap <leader>d "+d
+vnoremap <silent> y y`]
+vnoremap <silent> p p`]
+nnoremap <silent> p p`]
 
 " Key mapping
 inoremap <expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
