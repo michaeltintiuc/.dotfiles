@@ -39,10 +39,10 @@ set incsearch
 call plug#begin('~/.config/nvim/plugged')
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdcommenter'
 Plug 'itchyny/lightline.vim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'padawan-php/deoplete-padawan', { 'do': 'composer install' }
@@ -62,7 +62,6 @@ Plug 'jwalton512/vim-blade'
 call plug#end()
 
 " Plugin Configs
-let g:php_folding=2
 let base16colorspace=256
 let g:tmuxline_powerline_separators = 0
 let g:buftabline_show = 1
@@ -79,6 +78,9 @@ let g:lightline = {
       \ },
       \ }
 
+"PHP configs
+let g:php_folding = 2
+
 " Snippets
 let g:ultisnips_php_scalar_types = 1
 let g:UltiSnipsSnippetsDir = '~/.config/nvim/UltiSnips/'
@@ -91,6 +93,11 @@ let g:deoplete#enable_at_startup = 1
 let g:deoplete#skip_chars = ['$']
 let g:deoplete#sources#padawan#add_parentheses = 1
 "let g:deoplete#sources#padawan#auto_update = 1
+
+" Comments
+let g:NERDSpaceDelims = 1
+let g:NERDCommentEmptyLines = 1
+let g:NERDTrimTrailingWhitespace = 1
 
 " Copy to X
 set clipboard+=unnamed
@@ -123,3 +130,14 @@ command! -bang PadawanGenerate call deoplete#sources#padawan#Generate(<bang>0)
 
 " Colors
 colorscheme base16-tomorrow-night
+
+function! PhpSyntaxOverride()
+  hi! def link phpDocTags  phpDefine
+  hi! def link phpDocParam phpType
+endfunction
+
+" PHP doc
+augroup phpSyntaxOverride
+  autocmd!
+  autocmd FileType php call PhpSyntaxOverride()
+augroup END
