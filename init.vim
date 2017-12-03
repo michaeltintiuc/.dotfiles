@@ -46,6 +46,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'itchyny/lightline.vim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'padawan-php/deoplete-padawan', { 'do': 'composer install' }
+Plug 'zchee/deoplete-jedi'
 Plug 'SirVer/ultisnips'
 Plug 'ap/vim-buftabline'
 Plug 'matze/vim-move'
@@ -91,6 +92,7 @@ let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 " Autocomplete
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#skip_chars = ['$']
+let g:deoplete#sources#jedi#show_docstring = 1
 let g:deoplete#sources#padawan#add_parentheses = 1
 "let g:deoplete#sources#padawan#auto_update = 1
 
