@@ -34,6 +34,7 @@ set listchars=tab:\ \ ,trail:•,extends:#,nbsp:.
 set foldmethod=syntax
 set foldlevelstart=99
 set incsearch
+set cursorline
 
 " Plugins
 call plug#begin('~/.config/nvim/plugged')
@@ -122,7 +123,7 @@ nnoremap <leader><Enter> :FZFMru<CR>
 nnoremap <C-\> :NERDTreeToggle<CR>
 
 " Misc
-au BufWritePost *.php silent! !eval '[ -f ".git/hooks/ctags" ] && .git/hooks/ctags' &
+" au BufWritePost *.php silent! !eval '[ -f ".git/hooks/ctags" ] && .git/hooks/ctags' &
 command! PadawanStart call deoplete#sources#padawan#StartServer()
 command! PadawanStop call deoplete#sources#padawan#StopServer()
 command! PadawanRestart call deoplete#sources#padawan#RestartServer()
