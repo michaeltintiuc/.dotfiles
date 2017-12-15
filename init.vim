@@ -31,8 +31,8 @@ set pumheight=15
 set completeopt=menuone,longest
 set list
 set listchars=tab:\ \ ,trail:•,extends:#,nbsp:. 
-" set foldmethod=syntax
-" set foldlevelstart=99
+set foldmethod=indent
+set foldlevelstart=99
 set incsearch
 set cursorline
 set synmaxcol=2048
