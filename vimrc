@@ -59,6 +59,7 @@ Plug 'chriskempson/base16-vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'edkolev/tmuxline.vim'
 Plug 'jwalton512/vim-blade'
+Plug 'leafgarland/typescript-vim'
 call plug#end()
 
 " Plugin Configs
