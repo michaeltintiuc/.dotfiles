@@ -143,3 +143,6 @@ augroup phpSyntaxOverride
 	autocmd!
 	autocmd FileType php call PhpSyntaxOverride()
 augroup END
+
+" JavaScript
+au BufRead,BufNewFile *.js,*.ts,*.coffee setl sw=2 sts=2 et
