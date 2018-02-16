@@ -1,2 +1,5 @@
 alias artisan="php artisan"
 alias branch="git branch -vv"
+alias dps="docker ps -a"
+alias dcu="docker-compose up -d"
+alias dcs="docker-compose stop"
