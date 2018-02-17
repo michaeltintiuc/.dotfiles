@@ -50,6 +50,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'padawan-php/deoplete-padawan', { 'do': 'composer install' }
 Plug 'zchee/deoplete-jedi'
+Plug 'zchee/deoplete-go', { 'do': 'make'}
 Plug 'SirVer/ultisnips'
 Plug 'ap/vim-buftabline'
 Plug 'matze/vim-move'
@@ -65,6 +66,7 @@ Plug 'edkolev/tmuxline.vim'
 Plug 'jwalton512/vim-blade'
 Plug 'kchmck/vim-coffee-script'
 Plug 'leafgarland/typescript-vim'
+Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 call plug#end()
 
 " Plugin Configs
@@ -86,6 +88,20 @@ let g:lightline = {
 
 "PHP configs
 " let g:php_folding = 2
+
+"Go Configs
+let g:deoplete#sources#go#package_dot = 1
+let g:deoplete#sources#go#pointer = 1
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_extra_types = 1
+let g:go_metalinter_autosave = 1
+let g:go_metalinter_autosave_enabled = ['vet', 'golint']
+let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
+
+autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
 
 " Snippets
 let g:ultisnips_php_scalar_types = 1
@@ -126,6 +142,29 @@ nnoremap <C-p> :FZF<cr>
 nnoremap <leader><Enter> :FZFMru<CR>
 nnoremap <C-\> :NERDTreeToggle<CR>
 
+" Quickfix mapping
+map <C-n> :cnext<CR>
+map <C-m> :cprevious<CR>
+nnoremap <leader>a :cclose<CR>
+
+" Run :GoBuild or :GoTestCompile based on the go file
+function! s:build_go_files()
+  let l:file = expand('%')
+  if l:file =~# '^\f\+_test\.go$'
+    call go#test#Test(0, 1)
+  elseif l:file =~# '^\f\+\.go$'
+    call go#cmd#Build(0)
+  endif
+endfunction
+
+" Go mappings
+autocmd FileType go nmap <leader>r  <Plug>(go-run)
+autocmd FileType go nmap <leader>t  <Plug>(go-test)
+autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
+
+" JavaScript
+au BufRead,BufNewFile *.js,*.ts,*.coffee setl sw=2 sts=2 et
+
 " Misc
 " au BufWritePost *.php silent! !eval '[ -f ".git/hooks/ctags" ] && .git/hooks/ctags' &
 command! PadawanStart call deoplete#sources#padawan#StartServer()
@@ -148,6 +187,3 @@ augroup phpSyntaxOverride
   autocmd!
   autocmd FileType php call PhpSyntaxOverride()
 augroup END
-
-" JavaScript
-au BufRead,BufNewFile *.js,*.ts,*.coffee setl sw=2 sts=2 et
