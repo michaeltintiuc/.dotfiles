@@ -163,7 +163,8 @@ autocmd FileType go nmap <leader>t  <Plug>(go-test)
 autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
 
 " JavaScript
-au BufRead,BufNewFile *.js,*.ts,*.coffee setl sw=2 sts=2 et
+au BufRead,BufNewFile *.js,*.ts setl sw=2 sts=2 et
+au BufRead,BufNewFile *.coffee setl noexpandtab
 
 " Misc
 " au BufWritePost *.php silent! !eval '[ -f ".git/hooks/ctags" ] && .git/hooks/ctags' &
