@@ -92,6 +92,7 @@ let g:lightline = {
 "Go Configs
 let g:deoplete#sources#go#package_dot = 1
 let g:deoplete#sources#go#pointer = 1
+let g:go_term_mode = "split"
 let g:go_highlight_types = 1
 let g:go_highlight_fields = 1
 let g:go_highlight_functions = 1
