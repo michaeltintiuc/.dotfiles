@@ -37,6 +37,7 @@ set incsearch
 set cursorline
 set synmaxcol=2048
 set lazyredraw
+set updatetime=100
 
 " Plugins
 call plug#begin('~/.config/nvim/plugged')
@@ -57,7 +58,7 @@ Plug 'matze/vim-move'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'pbogut/fzf-mru.vim'
-Plug 'Shougo/echodoc.vim', {'for': ['php']}
+Plug 'Shougo/echodoc.vim', {'for': ['php', 'go']}
 Plug 'StanAngeloff/php.vim'
 Plug 'mattn/emmet-vim'
 Plug 'chriskempson/base16-vim'
@@ -101,6 +102,8 @@ let g:go_highlight_extra_types = 1
 let g:go_metalinter_autosave = 1
 let g:go_metalinter_autosave_enabled = ['vet', 'golint']
 let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
+let g:go_auto_type_info = 1
+let g:go_auto_sameids = 1
 
 autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
 
