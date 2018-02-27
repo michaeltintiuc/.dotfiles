@@ -45,7 +45,6 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-fugitive'
-Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'itchyny/lightline.vim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -68,10 +67,13 @@ Plug 'jwalton512/vim-blade'
 Plug 'kchmck/vim-coffee-script'
 Plug 'leafgarland/typescript-vim'
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+Plug 'francoiscabrol/ranger.vim'
+Plug 'rbgrouleff/bclose.vim'
 call plug#end()
 
 " Plugin Configs
 let base16colorspace=256
+let g:ranger_replace_netrw = 1
 let g:tmuxline_powerline_separators = 0
 let g:buftabline_show = 1
 let g:fzf_mru_relative = 1
@@ -144,7 +146,6 @@ nnoremap <leader>] :bnext<CR>
 nnoremap <leader>[ :bprev<CR>
 nnoremap <C-p> :FZF<cr>
 nnoremap <leader><Enter> :FZFMru<CR>
-nnoremap <C-\> :NERDTreeToggle<CR>
 
 " Quickfix mapping
 map <C-n> :cnext<CR>
