@@ -146,6 +146,7 @@ nnoremap <leader>] :bnext<CR>
 nnoremap <leader>[ :bprev<CR>
 nnoremap <C-p> :FZF<cr>
 nnoremap <leader><Enter> :FZFMru<CR>
+nnoremap <leader>cf :let @+=expand("%")<CR>
 
 " Quickfix mapping
 map <C-n> :cnext<CR>
