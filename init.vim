@@ -139,6 +139,7 @@ vnoremap <silent> p p`]
 nnoremap <silent> p p`]
 
 " Key mapping
+map <leader>s :source ~/.dotfiles/init.vim<cr>
 inoremap <expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<TAB>"
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
@@ -147,6 +148,7 @@ nnoremap <leader>[ :bprev<CR>
 nnoremap <C-p> :FZF<cr>
 nnoremap <leader><Enter> :FZFMru<CR>
 nnoremap <leader>cf :let @+=expand("%")<CR>
+nnoremap <leader>t :exec("Tags " . expand("<cword>"))<CR>
 
 " Quickfix mapping
 " map <C-n> :cnext<CR>
