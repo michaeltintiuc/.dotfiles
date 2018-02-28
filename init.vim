@@ -149,8 +149,8 @@ nnoremap <leader><Enter> :FZFMru<CR>
 nnoremap <leader>cf :let @+=expand("%")<CR>
 
 " Quickfix mapping
-map <C-n> :cnext<CR>
-map <C-m> :cprevious<CR>
+" map <C-n> :cnext<CR>
+" map <C-m> :cprevious<CR>
 nnoremap <leader>a :cclose<CR>
 
 " Run :GoBuild or :GoTestCompile based on the go file
