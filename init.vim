@@ -114,7 +114,7 @@ autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
 " Snippets
 let g:ultisnips_php_scalar_types = 1
 let g:UltiSnipsSnippetsDir = '~/.config/nvim/UltiSnips/'
-let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsExpandTrigger="<c-l>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
@@ -155,6 +155,7 @@ nnoremap <C-p> :FZF<cr>
 nnoremap <leader><Enter> :FZFMru<CR>
 nnoremap <leader>cf :let @+=expand("%")<CR>
 nnoremap <leader>t :exec("Tags " . expand("<cword>"))<CR>
+nnoremap <leader>bd :bufdo bd<CR>
 
 " Quickfix mapping
 " map <C-n> :cnext<CR>
