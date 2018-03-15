@@ -30,7 +30,7 @@ set smartindent
 set pumheight=15
 set completeopt=menuone,longest
 set list
-set listchars=tab:\ \ ,trail:•,extends:#,nbsp:. 
+set listchars=tab:\ \ ,trail:•,extends:#,nbsp:.
 set foldmethod=indent
 set foldlevelstart=99
 set incsearch
@@ -205,7 +205,8 @@ endfunction
 
 hi MatchParen cterm=bold ctermbg=white ctermfg=darkRed
 hi IncSearch cterm=bold,underline ctermbg=none ctermfg=darkRed
-hi Search cterm=bold,underline ctermbg=none ctermfg=darkRed
+" hi Search cterm=bold,underline ctermbg=none ctermfg=darkRed
+" hi NonText ctermbg=black ctermfg=lightGrey guibg=black
 
 " PHP doc
 augroup phpSyntaxOverride
