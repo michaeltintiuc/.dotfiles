@@ -1,0 +1,54 @@
+let mapleader=','
+filetype plugin indent on
+syntax enable
+
+" Settings
+set nocompatible
+set number
+set relativenumber
+set ruler
+set mouse=a
+set autowrite
+set autoread
+set bs=indent,eol,start
+set noshowmode
+set hidden
+set nojoinspaces
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set shiftround
+set expandtab
+set autoindent
+set smartindent
+set pumheight=15
+set completeopt=menuone,longest
+set list
+set listchars=tab:\ \ ,trail:•,extends:#,nbsp:.
+set foldmethod=indent
+set foldlevelstart=99
+set incsearch
+set cursorline
+set synmaxcol=2048
+set lazyredraw
+set updatetime=100
+set ignorecase
+set smartcase
+set hlsearch
+
+" Key mapping
+map <leader>s :source ~/.vimrc<cr>
+map <leader>e :e! ~/.vimrc<cr>
+map <leader>l :nohlsearch<cr>
+imap jk <ESC>
+inoremap <expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<TAB>"
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+nnoremap <leader>] :bnext<CR>
+nnoremap <leader>[ :bprev<CR>
+nnoremap <leader>cf :let @+=expand("%")<CR>
+nnoremap <leader>bd :bufdo bd<CR>
+nnoremap <leader>a :cclose<CR>
+
+hi MatchParen cterm=bold ctermbg=white ctermfg=darkRed
+hi IncSearch cterm=bold,underline ctermbg=none ctermfg=darkRed
