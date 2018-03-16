@@ -12,6 +12,7 @@ syntax enable
 
 " Nvim settings
 set number
+set bs=indent,eol,start
 set relativenumber
 set ruler
 set mouse=a
@@ -205,7 +206,7 @@ endfunction
 
 hi MatchParen cterm=bold ctermbg=white ctermfg=darkRed
 hi IncSearch cterm=bold,underline ctermbg=none ctermfg=darkRed
-" hi Search cterm=bold,underline ctermbg=none ctermfg=darkRed
+hi Search cterm=bold,underline ctermbg=none ctermfg=darkRed
 " hi NonText ctermbg=black ctermfg=lightGrey guibg=black
 
 " PHP doc
