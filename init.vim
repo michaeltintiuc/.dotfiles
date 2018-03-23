@@ -72,6 +72,7 @@ Plug 'leafgarland/typescript-vim'
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 Plug 'francoiscabrol/ranger.vim'
 Plug 'rbgrouleff/bclose.vim'
+Plug 'posva/vim-vue'
 call plug#end()
 
 " Plugin Configs
@@ -184,6 +185,7 @@ autocmd FileType go nmap <leader>t  <Plug>(go-test)
 autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
 
 " JavaScript
+autocmd FileType vue syntax sync fromstart
 au BufRead,BufNewFile *.js,*.ts setl sw=2 sts=2 et
 au BufRead,BufNewFile *.coffee,*.sass setl noexpandtab
 
