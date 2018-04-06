@@ -73,8 +73,6 @@ Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 Plug 'francoiscabrol/ranger.vim'
 Plug 'rbgrouleff/bclose.vim'
 Plug 'posva/vim-vue'
-Plug 'xolox/vim-easytags'
-Plug 'xolox/vim-misc'
 call plug#end()
 
 " Plugin Configs
