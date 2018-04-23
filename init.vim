@@ -186,7 +186,7 @@ autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
 
 " JavaScript
 autocmd FileType vue syntax sync fromstart
-au BufRead,BufNewFile *.js,*.ts setl sw=2 sts=2 et
+au BufRead,BufNewFile *.js,*.ts,*.vue setl sw=4 sts=4 et
 au BufRead,BufNewFile *.coffee,*.sass setl noexpandtab
 
 " Misc
