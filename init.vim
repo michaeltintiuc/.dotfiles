@@ -52,6 +52,7 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'padawan-php/deoplete-padawan', { 'do': 'composer install' }
 Plug 'zchee/deoplete-jedi'
 Plug 'zchee/deoplete-go', { 'do': 'make'}
+Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 Plug 'SirVer/ultisnips'
 Plug 'sniphpets/sniphpets'
 Plug 'sniphpets/sniphpets-common'
@@ -73,6 +74,9 @@ Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 Plug 'francoiscabrol/ranger.vim'
 Plug 'rbgrouleff/bclose.vim'
 Plug 'posva/vim-vue'
+Plug 'neomake/neomake'
+Plug 'ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx'] }
+Plug 'othree/jspc.vim', { 'for': ['javascript', 'javascript.jsx'] }
 call plug#end()
 
 " Plugin Configs
@@ -83,18 +87,37 @@ let g:buftabline_show = 1
 let g:fzf_mru_relative = 1
 let g:echodoc_enable_at_startup=1
 let g:lightline = {
-      \ 'colorscheme': 'Tomorrow_Night',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-      \ },
-      \ 'component_function': {
-      \   'gitbranch': 'fugitive#head'
-      \ },
-      \ }
+    \ 'colorscheme': 'Tomorrow_Night',
+    \ 'active': {
+    \   'left': [ [ 'mode', 'paste' ],
+    \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+    \ },
+    \ 'component_function': {
+    \   'gitbranch': 'fugitive#head'
+    \ },
+\ }
 
 "PHP configs
 " let g:php_folding = 2
+
+"JS Config
+let g:tern#command = ['tern']
+let g:tern#arguments = ['--persistent']
+let g:tern_map_keys=1
+" let g:deoplete#sources#ternjs#docs = 1
+let g:deoplete#sources#ternjs#filetypes = [
+    \ 'jsx',
+    \ 'javascript.jsx',
+    \ 'vue',
+	\ 'javascript',
+\]
+let g:deoplete#omni#input_patterns = {}
+let g:deoplete#omni#input_patterns.javascript = '[^. *\t]\.\w*'
+let g:deoplete#omni#functions = {}
+let g:deoplete#omni#functions.javascript = [
+	\ 'tern#Complete',
+	\ 'jspc#omni',
+\]
 
 "Go Configs
 let g:deoplete#sources#go#package_dot = 1
@@ -216,3 +239,14 @@ augroup phpSyntaxOverride
   autocmd!
   autocmd FileType php call PhpSyntaxOverride()
 augroup END
+
+"Neomake
+function! OnBattery()
+  return readfile('/sys/class/power_supply/AC/online') == ['0']
+endfunction
+
+if OnBattery()
+  call neomake#configure#automake('w')
+else
+  call neomake#configure#automake('nrwi', 500)
+endif
