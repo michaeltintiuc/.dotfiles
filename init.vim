@@ -52,7 +52,7 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'padawan-php/deoplete-padawan', { 'do': 'composer install' }
 Plug 'zchee/deoplete-jedi'
 Plug 'zchee/deoplete-go', { 'do': 'make'}
-Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+Plug 'carlitux/deoplete-ternjs'
 Plug 'SirVer/ultisnips'
 Plug 'sniphpets/sniphpets'
 Plug 'sniphpets/sniphpets-common'
@@ -61,7 +61,7 @@ Plug 'matze/vim-move'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'pbogut/fzf-mru.vim'
-Plug 'Shougo/echodoc.vim', {'for': ['php', 'go']}
+Plug 'Shougo/echodoc.vim', {'for': ['php', 'go', 'python']}
 Plug 'StanAngeloff/php.vim'
 Plug 'mattn/emmet-vim'
 Plug 'chriskempson/base16-vim'
@@ -105,11 +105,11 @@ let g:tern#command = ['tern']
 let g:tern#arguments = ['--persistent']
 let g:tern_map_keys=1
 " let g:deoplete#sources#ternjs#docs = 1
+let g:deoplete#sources#ternjs#types = 1
 let g:deoplete#sources#ternjs#filetypes = [
     \ 'jsx',
     \ 'javascript.jsx',
     \ 'vue',
-	\ 'javascript',
 \]
 let g:deoplete#omni#input_patterns = {}
 let g:deoplete#omni#input_patterns.javascript = '[^. *\t]\.\w*'
