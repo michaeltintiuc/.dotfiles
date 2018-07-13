@@ -236,6 +236,7 @@ endfunction
 hi MatchParen cterm=bold ctermbg=white ctermfg=darkRed
 hi IncSearch cterm=bold,underline ctermbg=none ctermfg=darkRed
 hi Search cterm=bold,underline ctermbg=none ctermfg=darkRed
+hi CursorLineNr term=bold ctermfg=white gui=bold guifg=white
 " hi NonText ctermbg=black ctermfg=lightGrey guibg=black
 
 " PHP doc

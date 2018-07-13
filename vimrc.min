@@ -49,6 +49,12 @@ nnoremap <leader>[ :bprev<CR>
 nnoremap <leader>cf :let @+=expand("%")<CR>
 nnoremap <leader>bd :bufdo bd<CR>
 nnoremap <leader>a :cclose<CR>
+inoremap ;; <C-o>A;
+inoremap ,, <C-o>A,
+nnoremap ;; A;<Esc>
+nnoremap ,, A,<Esc>
 
 hi MatchParen cterm=bold ctermbg=white ctermfg=darkRed
 hi IncSearch cterm=bold,underline ctermbg=none ctermfg=darkRed
+hi CursorLine ctermfg=none ctermbg=18 cterm=bold guifg=white guibg=yellow gui=bold
+hi CursorLineNr term=bold ctermfg=white gui=bold guifg=white
