@@ -77,6 +77,7 @@ Plug 'posva/vim-vue'
 Plug 'neomake/neomake'
 Plug 'ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'othree/jspc.vim', { 'for': ['javascript', 'javascript.jsx'] }
+Plug 'editorconfig/editorconfig-vim'
 call plug#end()
 
 " Plugin Configs
@@ -216,6 +217,9 @@ autocmd FileType vue syntax sync fromstart
 au BufRead,BufNewFile *.js,*.ts,*.vue setl sw=4 sts=4 et
 au BufRead,BufNewFile *.coffee,*.sass setl noexpandtab
 
+" Vuejs
+autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css
+
 " Misc
 " au BufWritePost *.php silent! !eval '[ -f ".git/hooks/ctags" ] && .git/hooks/ctags' &
 command! PadawanStart call deoplete#sources#padawan#StartServer()
@@ -246,6 +250,12 @@ augroup phpSyntaxOverride
 augroup END
 
 "Neomake
+function! neomake#makers#ft#vue#eslint() abort
+    let maker = neomake#makers#ft#javascript#eslint()
+    call extend(get(maker, 'args', []), [])
+    return maker
+endfunction
+
 function! OnBattery()
   return readfile('/sys/class/power_supply/AC/online') == ['0']
 endfunction
