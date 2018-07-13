@@ -186,6 +186,10 @@ nnoremap <leader><Enter> :FZFMru<CR>
 nnoremap <leader>cf :let @+=expand("%")<CR>
 nnoremap <leader>t :exec("Tags " . expand("<cword>"))<CR>
 nnoremap <leader>bd :bufdo bd<CR>
+inoremap ;; <C-o>A;
+inoremap ,, <C-o>A,
+nnoremap ;; A;<Esc>
+nnoremap ,, A,<Esc>
 
 " Quickfix mapping
 " map <C-n> :cnext<CR>

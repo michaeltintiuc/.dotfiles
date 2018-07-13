@@ -1,6 +1,7 @@
 # Text Editors #
 ###################
 .padawan/
+.scannerwork/
 *~
 *.swp
 *.swo
