@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=urxvt
+Exec=urxvt
+Icon=utilities-terminal
+Type=Application

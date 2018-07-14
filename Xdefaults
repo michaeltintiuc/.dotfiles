@@ -1,0 +1,3 @@
+URxvt.scrollBar: false
+URxvt*font:     xft:Source Code Pro:size=10,\
+                xft:Deja Vu Sans Mono:size=12
