@@ -1,10 +1,11 @@
+alias vim=nvim
 alias vu="vagrant up"
 alias vs="vagrant ssh"
 alias vh="vagrant halt"
 alias artisan="php artisan"
-alias branch="git branch -vv"
-alias gstash="git stash --include-untracked"
 alias dps="docker ps -a"
 alias dcu="docker-compose up -d"
 alias dcs="docker-compose stop"
 alias vinyl="gst-launch-1.0 pulsesrc ! pulsesink"
+alias sz='source ~/.zshrc'
+alias ez='vim ~/.dotfiles/zsh/zshrc'

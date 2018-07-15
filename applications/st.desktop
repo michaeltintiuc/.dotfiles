@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Suckless Terminal
+Comment=A terminal that sucks less
+Exec=st -e tmux
+Terminal=false
+Icon=utilities-terminal
+Type=Application
