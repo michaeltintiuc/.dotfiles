@@ -25,38 +25,10 @@ plugins=(
   git
   colored-man-pages
   zsh-syntax-highlighting
+  vi-mode
 )
 
 source $ZSH/oh-my-zsh.sh
-
-# switch to VI mode
-bindkey -v
-
-# perform parameter expansion/command substitution in prompt
-setopt PROMPT_SUBST
-
-vim_ins_mode="%F{green}[INS]%{$reset_color%}"
-vim_cmd_mode="%F{cyan}[CMD]%{$reset_color%}"
-vim_mode=$vim_ins_mode
-
-function zle-keymap-select {
-	vim_mode="${${KEYMAP/vicmd/${vim_cmd_mode}}/(main|viins)/${vim_ins_mode}}"
-	zle reset-prompt
-}
-
-function zle-line-finish {
-	vim_mode=$vim_ins_mode
-}
-
-function TRAPINT() {
-  vim_mode=$vim_ins_mode
-  return $(( 128 + $1 ))
-}
-
-zle -N zle-keymap-select
-zle -N zle-line-finish
-
-RPROMPT='${vim_mode}'
 
 # GitHub auto-complete
 fpath=($HOME/.dotfiles/zsh/completions $fpath)
@@ -82,6 +54,7 @@ export FZF_DEFAULT_COMMAND="find . -path '*/\.*' -type d -prune -o -type f -prin
 HISTFILE=$HOME/.zsh_history
 SAVEHIST=5000
 HISTDUP=erase
+MODE_INDICATOR="%F{cyan}[CMD]%{$reset_color%}"
 setopt TRANSIENT_RPROMPT
 setopt NOBEEP
 setopt NOHISTBEEP
