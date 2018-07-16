@@ -1,5 +1,6 @@
 [Desktop Entry]
 Name=urxvt
+Comment=Our extended virtual terminal
 Exec=urxvt
 Icon=utilities-terminal
 Type=Application
