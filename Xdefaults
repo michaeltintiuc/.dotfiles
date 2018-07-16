@@ -11,4 +11,4 @@ URxvt*cursorBlink: true
 URxvt*cursorColor: rgb:A1/B5/6C
 URxvt*cursorUnderline: false
 URxvt*saveLines: 256
-URxvt*fading: 30
+URxvt*fading: 75
