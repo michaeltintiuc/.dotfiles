@@ -176,6 +176,7 @@ map <leader>s :source ~/.dotfiles/init.vim<cr>
 map <leader>e :e! ~/.dotfiles/init.vim<cr>
 map <leader>l :nohlsearch<cr>
 map <leader>pi :PlugInstall<cr>
+map <F6> :set spell!<cr>
 imap jk <ESC>
 inoremap <expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<TAB>"
