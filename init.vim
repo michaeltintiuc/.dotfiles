@@ -98,6 +98,10 @@ let g:lightline = {
     \ },
 \ }
 
+let s:p = g:lightline#colorscheme#Tomorrow_Night#palette
+let s:p.normal.right[0] = s:p.normal.left[0]
+let s:p.tabline.right = copy(s:p.normal.right)
+
 "PHP configs
 " let g:php_folding = 2
 
