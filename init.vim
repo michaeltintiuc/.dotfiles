@@ -48,10 +48,12 @@ Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdcommenter'
 Plug 'itchyny/lightline.vim'
+Plug 'Shougo/neoinclude.vim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'padawan-php/deoplete-padawan', { 'do': 'composer install' }
 Plug 'zchee/deoplete-jedi'
 Plug 'zchee/deoplete-go', { 'do': 'make'}
+Plug 'zchee/deoplete-clang'
 Plug 'carlitux/deoplete-ternjs'
 Plug 'SirVer/ultisnips'
 Plug 'sniphpets/sniphpets'
@@ -75,9 +77,11 @@ Plug 'francoiscabrol/ranger.vim'
 Plug 'rbgrouleff/bclose.vim'
 Plug 'posva/vim-vue'
 Plug 'neomake/neomake'
-Plug 'ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx', 'vue'] }
+Plug 'ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx', 'vue', 'typescript'] }
 Plug 'othree/jspc.vim', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'editorconfig/editorconfig-vim'
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'octol/vim-cpp-enhanced-highlight'
 call plug#end()
 
 " Plugin Configs
@@ -115,7 +119,9 @@ let g:deoplete#sources#ternjs#filetypes = [
     \ 'jsx',
     \ 'javascript.jsx',
     \ 'vue',
+    \ 'typescript'
 \]
+let g:vue_disable_pre_processors=1
 let g:deoplete#omni#input_patterns = {}
 let g:deoplete#omni#input_patterns.javascript = '[^. *\t]\.\w*'
 let g:deoplete#omni#functions = {}
@@ -145,6 +151,9 @@ autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
 " autocmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
 " autocmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
 " autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
+
+" C/C++
+let g:deoplete#sources#clang#libclang_path = '/usr/lib64/libclang.so'
 
 " Snippets
 let g:ultisnips_php_scalar_types = 1
@@ -221,6 +230,9 @@ autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
 autocmd FileType vue syntax sync fromstart
 au BufRead,BufNewFile *.js,*.ts,*.vue setl sw=4 sts=4 et
 au BufRead,BufNewFile *.coffee,*.sass setl noexpandtab
+
+" C/C++
+au BufRead,BufNewFile *.c,*.cpp,*.h setl sw=2 sts=2 et
 
 " Vuejs
 autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css

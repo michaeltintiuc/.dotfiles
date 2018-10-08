@@ -9,8 +9,10 @@ export GENDEV=/opt/gendev
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
 export LOCALBIN="$HOME/.local/bin"
+export ESPBIN="/opt/esp/xtensa-esp32-elf/bin"
+export IDF_PATH="/opt/esp/esp-idf"
 export PATH=$PATH:$HOME/.config/composer/vendor/bin:$HOME/bin:$FZF_BIN_PATH
-export PATH=$PATH:$LOCALBIN:$GOROOT:$GOBIN
+export PATH=$PATH:$LOCALBIN:$GOROOT:$GOBIN:$ESPBIN:$IDF_PATH
 export KEYTIMEOUT=1
 
 function ttmux() {
@@ -49,7 +51,7 @@ fi
 source $HOME/.dotfiles/zsh/aliases
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_DEFAULT_COMMAND="find . -path '*/\.*' -type d -prune -o -type f -print -o -type l -print 2> /dev/null | sed s/^..//"
+export FZF_DEFAULT_COMMAND="find -L . -path '*/\.*' -type d -prune -o -type f -print -o -type l -print 2> /dev/null | sed s/^..//"
 
 bindkey -M vicmd "q" push-line
 bindkey -M viins "^_" undo
