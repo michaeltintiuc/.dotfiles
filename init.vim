@@ -80,7 +80,7 @@ Plug 'neomake/neomake'
 Plug 'ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx', 'vue', 'typescript'] }
 Plug 'othree/jspc.vim', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'editorconfig/editorconfig-vim'
-Plug 'ludovicchabant/vim-gutentags'
+Plug 'ludovicchabant/vim-gutentags', { 'for': ['c', 'c++'] }
 Plug 'octol/vim-cpp-enhanced-highlight'
 call plug#end()
 
