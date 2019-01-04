@@ -267,11 +267,11 @@ augroup phpSyntaxOverride
 augroup END
 
 "Neomake
-function! neomake#makers#ft#vue#eslint() abort
-    let maker = neomake#makers#ft#javascript#eslint()
-    call extend(get(maker, 'args', []), [])
-    return maker
-endfunction
+" function! neomake#makers#ft#vue#eslint() abort
+    " let maker = neomake#makers#ft#javascript#eslint()
+    " call extend(get(maker, 'args', []), [])
+    " return maker
+" endfunction
 
 function! OnBattery()
   return readfile('/sys/class/power_supply/AC/online') == ['0']
