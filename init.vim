@@ -82,6 +82,7 @@ Plug 'othree/jspc.vim', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'editorconfig/editorconfig-vim'
 Plug 'ludovicchabant/vim-gutentags', { 'for': ['c', 'c++'] }
 Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'calviken/vim-gdscript3'
 call plug#end()
 
 " Plugin Configs
