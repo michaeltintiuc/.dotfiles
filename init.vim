@@ -72,6 +72,7 @@ Plug 'edkolev/tmuxline.vim'
 Plug 'jwalton512/vim-blade'
 Plug 'kchmck/vim-coffee-script'
 Plug 'leafgarland/typescript-vim'
+Plug 'HerringtonDarkholme/yats'
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 Plug 'francoiscabrol/ranger.vim'
 Plug 'rbgrouleff/bclose.vim'
@@ -83,6 +84,8 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'ludovicchabant/vim-gutentags', { 'for': ['c', 'c++'] }
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'calviken/vim-gdscript3'
+Plug 'mxw/vim-jsx'
+Plug 'pangloss/vim-javascript'
 call plug#end()
 
 " Plugin Configs
@@ -229,8 +232,14 @@ autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
 
 " JavaScript
 autocmd FileType vue syntax sync fromstart
-au BufRead,BufNewFile *.js,*.ts,*.vue setl sw=4 sts=4 et
+au BufRead,BufNewFile *.js,*.ts,*.vue setl sw=2 sts=2 et
 au BufRead,BufNewFile *.coffee,*.sass setl noexpandtab
+
+let g:javascript_plugin_jsdoc = 1
+let g:javascript_plugin_flow = 1
+
+" JSX
+let g:jsx_ext_required = 0
 
 " C/C++
 au BufRead,BufNewFile *.c,*.cpp,*.h setl sw=2 sts=2 et

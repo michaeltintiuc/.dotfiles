@@ -9,3 +9,4 @@ alias dcs="docker-compose stop"
 alias vinyl="gst-launch-1.0 pulsesrc ! pulsesink"
 alias sz='source ~/.zshrc'
 alias ez='vim ~/.dotfiles/zsh/zshrc'
+alias webcam='ffmpeg -f v4l2 -input_format mjpeg -i /dev/video0 -f v4l2 -pix_fmt yuv420p /dev/video2'
