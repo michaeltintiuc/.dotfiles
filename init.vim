@@ -39,6 +39,7 @@ set cursorline
 set synmaxcol=2048
 set lazyredraw
 set updatetime=100
+set termguicolors
 
 " Plugins
 call plug#begin('~/.config/nvim/plugged')
