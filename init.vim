@@ -72,7 +72,6 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'edkolev/tmuxline.vim'
 Plug 'jwalton512/vim-blade'
 Plug 'kchmck/vim-coffee-script'
-Plug 'leafgarland/typescript-vim'
 Plug 'HerringtonDarkholme/yats'
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 Plug 'francoiscabrol/ranger.vim'
@@ -87,6 +86,8 @@ Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'calviken/vim-gdscript3'
 Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
 call plug#end()
 
 " Plugin Configs
