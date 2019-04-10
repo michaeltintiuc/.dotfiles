@@ -79,14 +79,15 @@ Plug 'rbgrouleff/bclose.vim'
 Plug 'posva/vim-vue'
 Plug 'neomake/neomake'
 Plug 'ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx', 'vue', 'typescript'] }
-Plug 'othree/jspc.vim', { 'for': ['javascript', 'javascript.jsx'] }
+Plug 'othree/jspc.vim', { 'for': ['javascript', 'javascript.jsx', 'typescript'] }
 Plug 'editorconfig/editorconfig-vim'
 Plug 'ludovicchabant/vim-gutentags', { 'for': ['c', 'c++'] }
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'calviken/vim-gdscript3'
 Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
-Plug 'HerringtonDarkholme/yats.vim'
+" Plug 'HerringtonDarkholme/yats.vim'
+Plug 'leafgarland/typescript-vim'
 Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
 call plug#end()
 
