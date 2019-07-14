@@ -54,6 +54,7 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'padawan-php/deoplete-padawan', { 'do': 'composer install' }
 Plug 'zchee/deoplete-jedi'
 Plug 'zchee/deoplete-go', { 'do': 'make'}
+Plug 'stamblerre/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
 Plug 'zchee/deoplete-clang'
 Plug 'carlitux/deoplete-ternjs'
 Plug 'SirVer/ultisnips'
@@ -72,7 +73,6 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'edkolev/tmuxline.vim'
 Plug 'jwalton512/vim-blade'
 Plug 'kchmck/vim-coffee-script'
-Plug 'HerringtonDarkholme/yats'
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 Plug 'francoiscabrol/ranger.vim'
 Plug 'rbgrouleff/bclose.vim'
@@ -86,9 +86,10 @@ Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'calviken/vim-gdscript3'
 Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
-" Plug 'HerringtonDarkholme/yats.vim'
+Plug 'HerringtonDarkholme/yats.vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
+Plug 'dbeniamine/cheat.sh-vim'
 call plug#end()
 
 " Plugin Configs
@@ -112,6 +113,9 @@ let g:lightline = {
 let s:p = g:lightline#colorscheme#Tomorrow_Night#palette
 let s:p.normal.right[0] = s:p.normal.left[0]
 let s:p.tabline.right = copy(s:p.normal.right)
+
+" Assembly
+autocmd BufNewFile,BufRead *.asm set ft=nasm
 
 "PHP configs
 " let g:php_folding = 2
