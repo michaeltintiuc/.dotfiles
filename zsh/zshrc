@@ -16,6 +16,9 @@ export PATH=$PATH:$LOCALBIN:$GOROOT:$GOBIN:$ESPBIN:$IDF_PATH
 export KEYTIMEOUT=1
 export JOBS=`nproc`
 
+# Latest Golang bins
+export PATH=$PATH:/usr/lib/go-1.12/bin
+
 # NVM
 export NVM_DIR="${XDG_CONFIG_HOME/:-$HOME/.}.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"

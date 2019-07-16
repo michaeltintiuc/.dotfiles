@@ -248,6 +248,11 @@ let g:javascript_plugin_flow = 1
 " JSX
 let g:jsx_ext_required = 0
 
+" Typescript
+autocmd BufRead,BufNewFile *.ts,*.tsx nnoremap <buffer> <silent> <C-]> :TSDef<CR>
+autocmd BufRead,BufNewFile *.ts,*.tsx nnoremap <buffer> <silent> K :TSDoc<CR>
+autocmd BufRead,BufNewFile *.ts,*.tsx nnoremap <buffer> <silent> <leader>i :!tslint % --fix<CR>
+
 " C/C++
 au BufRead,BufNewFile *.c,*.cpp,*.h setl sw=2 sts=2 et
 
