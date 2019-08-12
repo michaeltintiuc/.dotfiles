@@ -164,7 +164,8 @@ autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
 " autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
 
 " C/C++
-let g:deoplete#sources#clang#libclang_path = '/usr/lib64/libclang.so'
+let g:deoplete#sources#clang#libclang_path = '/usr/lib/llvm-8/lib/libclang.so.1'
+let g:deoplete#sources#clang#clang_header = '/usr/lib/llvm-8/lib/clang/8.0.0'
 
 " Snippets
 let g:ultisnips_php_scalar_types = 1
@@ -239,7 +240,7 @@ autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
 
 " JavaScript
 autocmd FileType vue syntax sync fromstart
-au BufRead,BufNewFile *.js,*.ts,*.vue setl sw=2 sts=2 et
+au BufRead,BufNewFile *.js,*.ts,*.vue,*.tsx setl sw=2 sts=2 et
 au BufRead,BufNewFile *.coffee,*.sass setl noexpandtab
 
 let g:javascript_plugin_jsdoc = 1

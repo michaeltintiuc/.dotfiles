@@ -9,12 +9,16 @@ export GENDEV=/opt/gendev
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
 export LOCALBIN="$HOME/.local/bin"
-export ESPBIN="$HOME/esp/xtensa-esp32-elf/bin"
+# export ESPBIN="$HOME/esp/xtensa-esp32-elf/bin"
 export IDF_PATH="$HOME/esp/esp-idf"
 export PATH=$PATH:$HOME/.config/composer/vendor/bin:$HOME/bin:$FZF_BIN_PATH
-export PATH=$PATH:$LOCALBIN:$GOROOT:$GOBIN:$ESPBIN:$IDF_PATH
+export PATH=$PATH:$LOCALBIN:$GOROOT:$GOBIN:$IDF_PATH
+# export PATH=$PATH:$LOCALBIN:$GOROOT:$GOBIN:$ESPBIN:$IDF_PATH
 export KEYTIMEOUT=1
 export JOBS=`nproc`
+
+# ESP/IDF
+. $IDF_PATH/export.sh >/dev/null 2>&1
 
 # Latest Golang bins
 export PATH=$PATH:/usr/lib/go-1.12/bin
