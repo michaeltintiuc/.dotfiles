@@ -2,6 +2,7 @@
 BASE16_SHELL=$HOME/.config/base16-shell/
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 
+export LBRY_ANDROID_HOME=$HOME/data/source/lbry-android
 export ZSH=$HOME/.oh-my-zsh
 export FZF_BIN_PATH="$HOME/.fzf/bin"
 export GROFF_NO_SGR=1
@@ -11,7 +12,8 @@ export GOBIN=$GOPATH/bin
 export LOCALBIN="$HOME/.local/bin"
 # export ESPBIN="$HOME/esp/xtensa-esp32-elf/bin"
 export IDF_PATH="$HOME/esp/esp-idf"
-export PATH=$PATH:$HOME/.config/composer/vendor/bin:$HOME/bin:$FZF_BIN_PATH
+export ANDROID_TOOLS_PATH=$HOME/Android/Sdk/platform-tools
+export PATH=$PATH:$HOME/.config/composer/vendor/bin:$HOME/bin:$FZF_BIN_PATH:$ANDROID_TOOLS_PATH
 export PATH=$PATH:$LOCALBIN:$GOROOT:$GOBIN:$IDF_PATH
 # export PATH=$PATH:$LOCALBIN:$GOROOT:$GOBIN:$ESPBIN:$IDF_PATH
 export KEYTIMEOUT=1
