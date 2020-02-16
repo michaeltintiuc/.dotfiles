@@ -17,10 +17,19 @@ ruby \
 python-pip \
 python3-pip \
 cmake \
+build-essential \
+binutils \
+clang \
+libsdl2-dev \
+libsdl2-image-dev \
+imagemagick \
 openvpn \
 openconnect \
 network-manger-openvpn \
-network-manger-openconnect
+network-manger-openconnect \
+network-manger-openvpn-gnome \
+network-manger-openconnect-gnome \
+kdeconnect
 
 sudo usermod -aG docker $(whoami)
 
