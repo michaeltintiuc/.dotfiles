@@ -62,10 +62,12 @@ sudo npm i -g npm
 echo "NeoVim"
 [ ! -d .config/nvim ] && mkdir .config/nvim
 echo "source $HOME/.dotfiles/init.vim" >> .config/nvim/init.vim
-pip install pynvim
-pip3 install pynvim
+pip install pynvim jedi
+pip3 install pynvim jedi
 gem install neovim
 sudo npm i -g neovim
+nvim +PlugInstall +qall
+nvim -c 'CocInstall -sync coc-json coc-tsserver coc-prettier coc-eslint coc-snippets coc-css coc-gocode coc-rls coc-tslint-plugin coc-vetur coc-python|q'
 
 echo "Git"
 rm -rf .gitconfig .gitignore
@@ -73,7 +75,7 @@ ln -s .dotfiles/gitconfig .gitconfig
 ln -s .dotfiles/gitignore .gitignore
 
 echo "JS"
-sudo npm i -g typescript tslint eslint
+sudo npm i -g typescript tslint eslint prettier
 
 # Installing base16 theme
 echo "Installing base16 theme"
@@ -83,3 +85,7 @@ BASE16_SHELL="$HOME/.config/base16-shell/"
     [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
         eval "$("$BASE16_SHELL/profile_helper.sh")"
 eval "base16_tomorrow-night"
+
+echo "Rust"
+curl https://sh.rustup.rs -sSf | sh
+
