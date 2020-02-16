@@ -29,7 +29,9 @@ network-manger-openvpn \
 network-manger-openconnect \
 network-manger-openvpn-gnome \
 network-manger-openconnect-gnome \
-kdeconnect
+kdeconnect \
+ripgrep \
+fd-find
 
 sudo usermod -aG docker $(whoami)
 
@@ -45,7 +47,8 @@ echo "ZSH"
 [ -f .zshrc ] && cp .zshrc .zshrc.bak
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 echo "source $HOME/.dotfiles/zsh/zshrc" >> .zshrc
-git clone https://github.com/zdharma/fast-syntax-highlighting.git $ZSH/plugins/fast-syntax-highlighting
+git clone https://github.com/zdharma/fast-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fast-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
 echo "BASH"
 [ -f .bashrc ] && cp .bashrc .bashrc.bak
@@ -79,7 +82,7 @@ sudo npm i -g typescript tslint eslint prettier
 
 # Installing base16 theme
 echo "Installing base16 theme"
-git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
+git clone https://github.com/chriskempson/base16-shell.git $HOME/.config/base16-shell
 BASE16_SHELL="$HOME/.config/base16-shell/"
 [ -n "$PS1" ] && \
     [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
@@ -89,3 +92,10 @@ eval "base16_tomorrow-night"
 echo "Rust"
 curl https://sh.rustup.rs -sSf | sh
 
+echo "Z"
+wget https://raw.githubusercontent.com/rupa/z/master/z.sh -O $HOME/.z
+
+echo "Ranger"
+[ ! -d .config/ranger ] && mkdir .config/ranger
+ranger --copy-config=all
+echo "source $HOME/.dotfiles/ranger/rc.conf" >> .config/ranger/rc.conf

@@ -1,7 +1,4 @@
 alias vim=nvim
-alias vu="vagrant up"
-alias vs="vagrant ssh"
-alias vh="vagrant halt"
 alias artisan="php artisan"
 alias dps="docker ps -a"
 alias dcu="docker-compose up -d"
@@ -9,5 +6,6 @@ alias dcs="docker-compose stop"
 alias vinyl="gst-launch-1.0 pulsesrc ! pulsesink"
 alias sz='source ~/.zshrc'
 alias ez='vim ~/.dotfiles/zsh/zshrc'
+alias ev='vim ~/.dotfiles/init.vim'
 alias webcam='ffmpeg -f v4l2 -input_format mjpeg -i /dev/video0 -f v4l2 -pix_fmt yuv420p /dev/video2'
-alias lbry-android=/home/michaeltintiuc/data/source/lbry-android/scripts/lbry-android.sh
+alias fd=fdfind
