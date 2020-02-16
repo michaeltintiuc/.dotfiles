@@ -17,6 +17,7 @@ ruby \
 python-pip \
 python3-pip \
 cmake \
+ccls \
 build-essential \
 binutils \
 clang \
@@ -31,7 +32,8 @@ network-manger-openvpn-gnome \
 network-manger-openconnect-gnome \
 kdeconnect \
 ripgrep \
-fd-find
+fd-find \
+neofetch
 
 sudo usermod -aG docker $(whoami)
 
@@ -71,11 +73,13 @@ gem install neovim
 sudo npm i -g neovim
 nvim +PlugInstall +qall
 nvim -c 'CocInstall -sync coc-json coc-tsserver coc-prettier coc-eslint coc-snippets coc-css coc-gocode coc-rls coc-tslint-plugin coc-vetur coc-python|q'
+ln -s .dotfiles/coc-settings.json $HOME/.config/nvim/.
 
 echo "Git"
 rm -rf .gitconfig .gitignore
 ln -s .dotfiles/gitconfig .gitconfig
 ln -s .dotfiles/gitignore .gitignore
+git config --global core.excludesfile '$HOME/.gitignore'
 
 echo "JS"
 sudo npm i -g typescript tslint eslint prettier

@@ -1,0 +1,51 @@
+{
+  "suggest.echodocSupport": true,
+  "suggest.maxCompleteItemCount": 20,
+  "coc.preferences.formatOnSaveFiletypes": [
+    "c",
+    "cpp",
+    "h",
+    "json",
+    "javascript",
+    "typescript",
+    "typescriptreact",
+    "javascriptreact",
+    "typescript.tsx",
+    "vue",
+    "rust",
+    "go"
+  ],
+  "eslint.filetypes": [
+    "javascript",
+    "typescript",
+    "typescriptreact",
+    "javascriptreact",
+    "typescript.tsx",
+    "vue"
+  ],
+  "tslint.autoFixOnSave": true,
+  "tslint.suppressWhileTypeErrorsPresent": true,
+  "prettier.eslintIntegration": true,
+  "prettier.stylelintIntegration": true,
+  "diagnostic.errorSign": "ε",
+  "diagnostic.warningSign": "ω",
+  "diagnostic.infoSign": "•",
+  "vetur.format.defaultFormatter.html": "prettier",
+  "languageserver": {
+    "golang": {
+      "command": "gopls",
+      "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
+      "filetypes": ["go"]
+    },
+    "ccls": {
+      "command": "ccls",
+      "filetypes": ["c", "cpp", "h"],
+      "rootPatterns": [".ccls-root", "compile_commands.json", ".git"],
+      "initializationOptions": {
+         "cache": {
+           "directory": ".ccls-cache"
+         }
+       }
+    }
+  }
+}
