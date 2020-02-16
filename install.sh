@@ -16,7 +16,13 @@ composer \
 ruby \
 python-pip \
 python3-pip \
-cmake
+cmake \
+openvpn \
+openconnect \
+network-manger-openvpn \
+network-manger-openconnect
+
+sudo usermod -aG docker $(whoami)
 
 # Setting zsh as default shell
 echo "Setting up zsh as default shell"
