@@ -42,10 +42,16 @@
       "filetypes": ["c", "cpp", "h"],
       "rootPatterns": [".ccls-root", "compile_commands.json", ".git"],
       "initializationOptions": {
-         "cache": {
-           "directory": ".ccls-cache"
-         }
-       }
+        "cache": {
+          "directory": ".ccls-cache"
+        }
+      }
+    },
+    "bash": {
+      "command": "bash-language-server",
+      "args": ["start"],
+      "filetypes": ["sh"],
+      "ignoredRootPaths": ["~"]
     }
   }
 }

@@ -18,6 +18,7 @@ python-pip \
 python3-pip \
 cmake \
 ccls \
+universal-ctags \
 build-essential \
 binutils \
 clang \
@@ -70,9 +71,9 @@ echo "source $HOME/.dotfiles/init.vim" >> .config/nvim/init.vim
 pip install pynvim jedi
 pip3 install pynvim jedi
 gem install neovim
-sudo npm i -g neovim
+sudo npm i -g neovim bash-language-server
 nvim +PlugInstall +qall
-nvim -c 'CocInstall -sync coc-json coc-tsserver coc-prettier coc-eslint coc-snippets coc-css coc-gocode coc-rls coc-tslint-plugin coc-vetur coc-python|q'
+nvim -c 'CocInstall -sync coc-json coc-tsserver coc-prettier coc-eslint coc-snippets coc-css coc-gocode coc-rls coc-tslint-plugin coc-vetur coc-python coc-phpls|q'
 ln -s .dotfiles/coc-settings.json $HOME/.config/nvim/.
 
 echo "Git"
