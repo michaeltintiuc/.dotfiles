@@ -23,7 +23,7 @@ export JOBS=`nproc`
 . $IDF_PATH/export.sh >/dev/null 2>&1
 
 # Latest Golang bins
-export PATH=$PATH:/usr/lib/go-1.12/bin
+export PATH=$PATH:/usr/lib/go-1.13/bin
 
 # NVM
 export NVM_DIR="${XDG_CONFIG_HOME/:-$HOME/.}.nvm"

@@ -1,11 +1,13 @@
 # Install packages
 echo "Installing packages..."
+sudo add-apt-repository -y ppa:longsleep/golang-backports
+
 sudo apt-get update
 sudo apt-get install -y \
 neovim \
 docker \
 docker-compose \
-golang \
+golang-1.13 \
 kitty \
 zsh \
 zsh-autosuggestions \
