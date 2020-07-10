@@ -2,12 +2,8 @@
   "suggest.echodocSupport": true,
   "suggest.maxCompleteItemCount": 20,
   "coc.preferences.formatOnSaveFiletypes": [
-    "c",
-    "cpp",
     "h",
     "json",
-    "javascript",
-    "typescript",
     "typescriptreact",
     "javascriptreact",
     "typescript.tsx",
@@ -23,8 +19,10 @@
     "typescript.tsx",
     "vue"
   ],
+  "eslint.autoFixOnSave": true,
   "tslint.autoFixOnSave": true,
   "tslint.suppressWhileTypeErrorsPresent": true,
+  "tsserver.log": "verbose",
   "prettier.eslintIntegration": true,
   "prettier.stylelintIntegration": true,
   "diagnostic.errorSign": "ε",

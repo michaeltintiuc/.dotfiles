@@ -3,6 +3,10 @@ echo "Installing packages..."
 sudo add-apt-repository -y ppa:longsleep/golang-backports
 
 sudo apt-get update
+
+# node 12
+curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+
 sudo apt-get install -y \
 neovim \
 docker \
@@ -36,7 +40,13 @@ network-manger-openconnect-gnome \
 kdeconnect \
 ripgrep \
 fd-find \
-neofetch
+neofetch \
+lm-sensors \
+nodejs \
+bochs \
+bochs-x \
+obs-studio \
+v4l-utils
 
 sudo usermod -aG docker $(whoami)
 
@@ -75,7 +85,7 @@ pip3 install pynvim jedi
 gem install neovim
 sudo npm i -g neovim bash-language-server
 nvim +PlugInstall +qall
-nvim -c 'CocInstall -sync coc-json coc-tsserver coc-prettier coc-eslint coc-snippets coc-css coc-gocode coc-rls coc-tslint-plugin coc-vetur coc-python coc-phpls|q'
+nvim -c 'CocInstall -sync coc-json coc-tsserver coc-prettier coc-eslint coc-snippets coc-css coc-gocode coc-rls coc-tslint-plugin coc-vetur coc-python coc-phpls coc-yaml|q'
 ln -s .dotfiles/coc-settings.json $HOME/.config/nvim/.
 
 echo "Git"
@@ -106,3 +116,8 @@ echo "Ranger"
 [ ! -d .config/ranger ] && mkdir .config/ranger
 ranger --copy-config=all
 echo "source $HOME/.dotfiles/ranger/rc.conf" >> .config/ranger/rc.conf
+
+echo "Brew"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+brew tap aws/tap
+brew install aws-sam-cli

@@ -112,6 +112,7 @@ Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'dbeniamine/cheat.sh-vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'liuchengxu/vista.vim'
+Plug 'nikvdp/ejs-syntax'
 call plug#end()
 
 " Plugin Configs
@@ -175,8 +176,8 @@ let g:go_highlight_extra_types = 1
 let g:go_metalinter_autosave = 1
 let g:go_metalinter_autosave_enabled = ['vet', 'golint']
 let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
-let g:go_auto_type_info = 1
-let g:go_auto_sameids = 1
+let g:go_auto_type_info = 0
+let g:go_auto_sameids = 0
 let g:go_fmt_command = "goimports"
 
 autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
@@ -261,8 +262,9 @@ autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
 
 " JavaScript
 autocmd FileType vue syntax sync fromstart
-au BufRead,BufNewFile *.js,*.ts,*.vue,*.tsx setl sw=2 sts=2 et
+au BufRead,BufNewFile *.js,*.ts,*.vue,*.tsx,*.scss,*.ejs setl sw=2 sts=2 et
 au BufRead,BufNewFile *.coffee,*.sass setl noexpandtab
+" au BufNewFile,BufRead *.ejs set filetype=javascript.jsx
 
 let g:javascript_plugin_jsdoc = 1
 let g:javascript_plugin_flow = 1
@@ -360,6 +362,16 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+
+" Applying codeAction to the selected region.
+" Example: `<leader>aap` for current paragraph
+xmap <leader>a  <Plug>(coc-codeaction-selected)
+nmap <leader>a  <Plug>(coc-codeaction-selected)
+
+" Remap keys for applying codeAction to the current line.
+nmap <leader>ac  <Plug>(coc-codeaction)
+" Apply AutoFix to problem on the current line.
+nmap <leader>qf  <Plug>(coc-fix-current)
 
 " Use K to show documentation in preview window
 nnoremap <silent> K :call <SID>show_documentation()<CR>
