@@ -113,6 +113,7 @@ Plug 'dbeniamine/cheat.sh-vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'liuchengxu/vista.vim'
 Plug 'nikvdp/ejs-syntax'
+Plug 'habamax/vim-godot'
 call plug#end()
 
 " Plugin Configs
@@ -189,6 +190,10 @@ autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
 " C/C++
 " let g:deoplete#sources#clang#libclang_path = '/usr/lib/llvm-8/lib/libclang.so.1'
 " let g:deoplete#sources#clang#clang_header = '/usr/lib/llvm-8/lib/clang/8.0.0'
+
+" Python
+let g:python3_host_prog = '/usr/bin/python3'
+let g:python_host_prog = '/usr/bin/python2'
 
 " Snippets
 let g:ultisnips_php_scalar_types = 1
@@ -402,3 +407,16 @@ let g:vista#renderer#icons = {
 \   "function": "\uf794",
 \   "variable": "\uf71b",
 \  }
+
+let g:godot_executable = "flatpak run org.godotengine.Godot"
+func! GodotSettings() abort
+    setlocal foldmethod=expr
+    setlocal tabstop=4
+    nnoremap <buffer> <F4> :GodotRunLast<CR>
+    nnoremap <buffer> <F5> :GodotRun<CR>
+    nnoremap <buffer> <F6> :GodotRunCurrent<CR>
+    nnoremap <buffer> <F7> :GodotRunFZF<CR>
+endfunc
+augroup godot | au!
+    au FileType gdscript call GodotSettings()
+augroup end

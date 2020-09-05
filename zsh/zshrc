@@ -62,17 +62,9 @@ plugins=(
   zsh-autosuggestions
 )
 
-source $ZSH/oh-my-zsh.sh
-
 # GitHub auto-complete
 fpath=($HOME/.dotfiles/zsh/completions $fpath)
-autoload -U compinit && compinit
-
-# Kitty auto-complete
-autoload -Uz compinit
-compinit
-# Completion for kitty
-kitty + complete setup zsh | source /dev/stdin
+# autoload -U compinit && compinit
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
@@ -81,7 +73,11 @@ else
   export EDITOR="nvim"
 fi
 
+source $ZSH/oh-my-zsh.sh
 source $HOME/.dotfiles/zsh/aliases
+
+# Completion for kitty
+kitty + complete setup zsh | source /dev/stdin
 
 [ -f ~/.fzf/shell/completion.zsh ] && source ~/.fzf/shell/completion.zsh
 [ -f ~/.fzf/shell/key-bindings.zsh ] && source ~/.fzf/shell/key-bindings.zsh

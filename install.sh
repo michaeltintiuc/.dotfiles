@@ -85,7 +85,7 @@ pip3 install pynvim jedi
 gem install neovim
 sudo npm i -g neovim bash-language-server
 nvim +PlugInstall +qall
-nvim -c 'CocInstall -sync coc-json coc-tsserver coc-prettier coc-eslint coc-snippets coc-css coc-gocode coc-rls coc-tslint-plugin coc-vetur coc-python coc-phpls coc-yaml|q'
+nvim -c 'CocInstall -sync coc-json coc-tsserver coc-prettier coc-eslint coc-snippets coc-css coc-gocode coc-rls coc-tslint-plugin coc-vetur coc-python coc-phpls coc-yaml coc-vetur|q'
 ln -s .dotfiles/coc-settings.json $HOME/.config/nvim/.
 
 echo "Git"
