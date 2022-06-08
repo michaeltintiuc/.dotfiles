@@ -1,3 +1,5 @@
+export GPG_TTY=$(tty)
+
 # Brew
 test -d ~/.linuxbrew && eval $(~/.linuxbrew/bin/brew shellenv)
 test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
@@ -14,13 +16,15 @@ export GENDEV=/opt/gendev
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
 export LOCALBIN="$HOME/.local/bin"
-# export ESPBIN="$HOME/esp/xtensa-esp32-elf/bin"
+export ESPBIN="$HOME/esp/xtensa-esp32-elf/bin"
 export IDF_PATH="$HOME/esp/esp-idf"
 export ANDROID_TOOLS_PATH=$HOME/Android/Sdk/platform-tools
 export RUST_PATH=$HOME/.cargo/bin
-export PATH=$PATH:$HOME/.config/composer/vendor/bin:$HOME/bin:$FZF_BIN_PATH:$ANDROID_TOOLS_PATH
+export DART_PUB_PATH=$HOME/.pub-cache/bin
+export PATH=$PATH:$HOME/.config/composer/vendor/bin:$HOME/bin:$FZF_BIN_PATH:$ANDROID_TOOLS_PATH:$DART_PUB_PATH
 export PATH=$PATH:$LOCALBIN:$GOROOT:$GOBIN:$IDF_PATH:$RUST_PATH
-# export PATH=$PATH:$LOCALBIN:$GOROOT:$GOBIN:$ESPBIN:$IDF_PATH
+export PATH=$PATH:$LOCALBIN:$GOROOT:$GOBIN:$ESPBIN:$IDF_PATH
+
 export KEYTIMEOUT=1
 export JOBS=`nproc`
 
@@ -54,8 +58,8 @@ plugins=(
   git
   colored-man-pages
   vi-mode
-  npm
-  npx
+  # npm
+  # npx
   fast-syntax-highlighting
   fzf
   z
@@ -81,6 +85,10 @@ kitty + complete setup zsh | source /dev/stdin
 
 [ -f ~/.fzf/shell/completion.zsh ] && source ~/.fzf/shell/completion.zsh
 [ -f ~/.fzf/shell/key-bindings.zsh ] && source ~/.fzf/shell/key-bindings.zsh
+
+# GO and Dart version managers
+[ -f ~/.gvm/scripts/gvm ] && source ~/.gvm/scripts/gvm
+[ -f ~/.dvm/scripts/dvm ] && source ~/.dvm/scripts/dvm
 
 # https://github.com/nicodebo/base16-fzf
 local color00='#1d1f21'
@@ -118,7 +126,11 @@ bindkey '\e[4~' end-of-line
 HISTFILE=$HOME/.zsh_history
 SAVEHIST=5000
 HISTDUP=erase
+VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true
+VI_MODE_SET_CURSOR=true
 MODE_INDICATOR="%F{cyan}[CMD]%{$reset_color%}"
+KEYTIMEOUT=20 #fix 'vv' binding not being triggered
+
 setopt TRANSIENT_RPROMPT
 setopt NOBEEP
 setopt NOHISTBEEP

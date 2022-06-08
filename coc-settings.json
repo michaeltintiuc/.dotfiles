@@ -9,7 +9,8 @@
     "typescript.tsx",
     "vue",
     "rust",
-    "go"
+    "go",
+    "dart"
   ],
   "eslint.filetypes": [
     "javascript",
@@ -29,11 +30,15 @@
   "diagnostic.warningSign": "ω",
   "diagnostic.infoSign": "•",
   "vetur.format.defaultFormatter.html": "prettier",
+  "flutter.lsp.initialization.onlyAnalyzeProjectsWithOpenFiles": false,
   "languageserver": {
     "golang": {
       "command": "gopls",
       "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
-      "filetypes": ["go"]
+      "filetypes": ["go"],
+      "initializationOptions": {
+        "usePlaceholders": true
+      }
     },
     "ccls": {
       "command": "ccls",
@@ -53,7 +58,7 @@
     },
     "godot": {
       "host": "127.0.0.1",
-      "filetypes": ["gdscript"],
+      "filetypes": ["gdscript", "gd"],
       "port": 6008
     }
   }

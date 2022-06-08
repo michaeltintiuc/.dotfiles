@@ -73,7 +73,7 @@ Plug 'Shougo/neoinclude.vim'
 " Plug 'padawan-php/deoplete-padawan', { 'do': 'composer install' }
 " Plug 'zchee/deoplete-jedi'
 " Plug 'zchee/deoplete-go', { 'do': 'make'}
-Plug 'stamblerre/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
+" Plug 'stamblerre/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
 " Plug 'zchee/deoplete-clang'
 " Plug 'carlitux/deoplete-ternjs'
 Plug 'SirVer/ultisnips'
@@ -109,11 +109,11 @@ Plug 'HerringtonDarkholme/yats.vim'
 Plug 'othree/javascript-libraries-syntax.vim'
 " Plug 'leafgarland/typescript-vim'
 " Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
-Plug 'dbeniamine/cheat.sh-vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'liuchengxu/vista.vim'
 Plug 'nikvdp/ejs-syntax'
 Plug 'habamax/vim-godot'
+Plug 'dart-lang/dart-vim-plugin'
 call plug#end()
 
 " Plugin Configs
@@ -130,7 +130,7 @@ let g:lightline = {
     \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
     \ },
     \ 'component_function': {
-    \   'gitbranch': 'fugitive#head'
+    \   'gitbranch': 'FugitiveHead'
     \ },
 \ }
 
@@ -267,7 +267,7 @@ autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
 
 " JavaScript
 autocmd FileType vue syntax sync fromstart
-au BufRead,BufNewFile *.js,*.ts,*.vue,*.tsx,*.scss,*.ejs setl sw=2 sts=2 et
+au BufRead,BufNewFile *.js,*.ts,*.vue,*.tsx,*.scss,*.ejs,*.json setl sw=2 sts=2 et
 au BufRead,BufNewFile *.coffee,*.sass setl noexpandtab
 " au BufNewFile,BufRead *.ejs set filetype=javascript.jsx
 
@@ -398,8 +398,6 @@ command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 " Vista
 let g:vista_default_executive = "coc"
 let g:vista_executive_for = {
-  \ 'cpp': 'ctags',
-  \ 'c': 'ctags',
   \ 'rust': 'ctags',
   \ }
 let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
@@ -408,7 +406,11 @@ let g:vista#renderer#icons = {
 \   "variable": "\uf71b",
 \  }
 
-let g:godot_executable = "flatpak run org.godotengine.Godot"
+" Dart
+let g:dart_style_guide = 2
+let g:dart_format_on_save = 1
+
+let g:godot_executable = "flatpak run org.godotengine.Godot -d --debug-collisions --debug-navigation"
 func! GodotSettings() abort
     setlocal foldmethod=expr
     setlocal tabstop=4
