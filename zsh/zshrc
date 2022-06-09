@@ -10,7 +10,8 @@ BASE16_SHELL=$HOME/.config/base16-shell/
 
 export SAM_CLI_TELEMETRY=0
 export ZSH=$HOME/.oh-my-zsh
-export FZF_BIN_PATH="$HOME/.fzf/bin"
+export FZF_BIN_PATH=/usr/bin/fzf
+# export FZF_BIN_PATH="$HOME/.fzf/bin"
 export GROFF_NO_SGR=1
 export GENDEV=/opt/gendev
 export GOPATH=$HOME/go
@@ -60,9 +61,9 @@ plugins=(
   vi-mode
   # npm
   # npx
-  fast-syntax-highlighting
+  F-Sy-H
   fzf
-  z
+  zsh-z
   zsh-autosuggestions
 )
 
