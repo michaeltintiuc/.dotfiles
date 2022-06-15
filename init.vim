@@ -91,7 +91,7 @@ Plug 'chriskempson/base16-vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'edkolev/tmuxline.vim'
 Plug 'jwalton512/vim-blade'
-Plug 'kchmck/vim-coffee-script'
+" Plug 'kchmck/vim-coffee-script'
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 Plug 'francoiscabrol/ranger.vim'
 Plug 'rbgrouleff/bclose.vim'
@@ -114,7 +114,6 @@ Plug 'liuchengxu/vista.vim'
 Plug 'nikvdp/ejs-syntax'
 Plug 'habamax/vim-godot'
 Plug 'dart-lang/dart-vim-plugin'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 call plug#end()
 
 " Plugin Configs
