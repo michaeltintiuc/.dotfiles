@@ -114,6 +114,7 @@ Plug 'liuchengxu/vista.vim'
 Plug 'nikvdp/ejs-syntax'
 Plug 'habamax/vim-godot'
 Plug 'dart-lang/dart-vim-plugin'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 call plug#end()
 
 " Plugin Configs
@@ -215,7 +216,7 @@ let g:NERDCommentEmptyLines = 1
 let g:NERDTrimTrailingWhitespace = 1
 
 " Copy to X
-set clipboard+=unnamed
+set clipboard+=unnamedplus
 vnoremap <leader>y "+y
 nnoremap <leader>p "+p
 vnoremap <leader>p "+p

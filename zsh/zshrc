@@ -122,7 +122,7 @@ export FZF_DEFAULT_OPTS="
   --color=fg:$color04,header:$color0D,info:$color0A,pointer:$color0C
   --color=marker:$color0C,fg+:$color06,prompt:$color0A,hl+:$color0D
 "
-export FZF_DEFAULT_COMMAND="fdfind --type f --hidden --follow --exclude .git"
+export FZF_DEFAULT_COMMAND="fd --type f --hidden --follow --exclude .git"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 bindkey -M vicmd "q" push-line

@@ -75,7 +75,8 @@ echo "include $HOME/.dotfiles/kitty.conf" >> .config/kitty/kitty.conf
 
 echo "NPM"
 [ ! -d .npm-packages ] && mkdir .npm-packages
-sudo npm i -g npm
+npm config set prefix $NPM_PACKAGES
+npm i -g npm
 
 echo "NeoVim"
 [ ! -d .config/nvim ] && mkdir .config/nvim
@@ -85,7 +86,7 @@ pip3 install pynvim jedi
 gem install neovim
 sudo npm i -g neovim bash-language-server
 nvim +PlugInstall +qall
-nvim -c 'CocInstall -sync coc-json coc-tsserver coc-prettier coc-eslint coc-snippets coc-css coc-gocode coc-rls coc-tslint-plugin coc-vetur coc-python coc-phpls coc-yaml coc-vetur|q'
+nvim -c 'CocInstall -sync coc-json coc-tsserver coc-prettier coc-eslint coc-snippets coc-css coc-gocode coc-rls coc-tslint-plugin coc-vetur coc-python coc-phpls coc-yaml coc-vetur coc-angular|q'
 ln -s .dotfiles/coc-settings.json $HOME/.config/nvim/.
 
 echo "Git"
