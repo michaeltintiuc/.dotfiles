@@ -1,4 +1,5 @@
 export GPG_TTY=$(tty)
+export KITTY_CONFIG_DIRECTORY=$HOME/.dotfiles/
 
 # Brew
 test -d ~/.linuxbrew && eval $(~/.linuxbrew/bin/brew shellenv)
@@ -27,7 +28,12 @@ export PATH=$PATH:$LOCALBIN:$GOROOT:$GOBIN:$IDF_PATH:$RUST_PATH
 export PATH=$PATH:$LOCALBIN:$GOROOT:$GOBIN:$ESPBIN:$IDF_PATH
 
 export KEYTIMEOUT=1
-export JOBS=`nproc`
+
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    export JOBS=`nproc`
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+    export JOBS=`sysctl -n hw.ncpu`
+fi
 
 # ESP/IDF
 . $IDF_PATH/export.sh >/dev/null 2>&1
@@ -64,7 +70,7 @@ plugins=(
   # npx
   F-Sy-H
   fzf
-  zsh-z
+  z
   zsh-autosuggestions
 )
 
@@ -162,3 +168,4 @@ setopt AUTO_CD
 setopt AUTO_PUSHD
 setopt PUSHD_TO_HOME
 setopt CORRECT
+
