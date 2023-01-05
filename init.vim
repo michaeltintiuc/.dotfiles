@@ -11,6 +11,7 @@ filetype plugin indent on
 syntax enable
 
 " Nvim settings
+set exrc
 set number
 set bs=indent,eol,start
 set relativenumber
@@ -41,6 +42,9 @@ set lazyredraw
 set updatetime=100
 set termguicolors
 
+" Spelunker
+set nospell
+
 " if hidden is not set, TextEdit might fail.
 set hidden
 
@@ -66,6 +70,8 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'APZelos/blamer.nvim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'itchyny/lightline.vim'
 Plug 'Shougo/neoinclude.vim'
@@ -76,9 +82,6 @@ Plug 'Shougo/neoinclude.vim'
 " Plug 'stamblerre/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
 " Plug 'zchee/deoplete-clang'
 " Plug 'carlitux/deoplete-ternjs'
-Plug 'SirVer/ultisnips'
-Plug 'sniphpets/sniphpets'
-Plug 'sniphpets/sniphpets-common'
 Plug 'ap/vim-buftabline'
 Plug 'matze/vim-move'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -114,6 +117,8 @@ Plug 'liuchengxu/vista.vim'
 Plug 'nikvdp/ejs-syntax'
 Plug 'habamax/vim-godot'
 Plug 'dart-lang/dart-vim-plugin'
+Plug 'kamykn/spelunker.vim'
+Plug 'othree/html5.vim'
 call plug#end()
 
 " Plugin Configs
@@ -133,6 +138,8 @@ let g:lightline = {
     \   'gitbranch': 'FugitiveHead'
     \ },
 \ }
+let g:blamer_enabled = 1
+let g:blamer_relative_time = 1
 
 let s:p = g:lightline#colorscheme#Tomorrow_Night#palette
 let s:p.normal.right[0] = s:p.normal.left[0]
@@ -194,13 +201,6 @@ autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
 " Python
 let g:python3_host_prog = '/usr/bin/python3'
 let g:python_host_prog = '/usr/bin/python2'
-
-" Snippets
-let g:ultisnips_php_scalar_types = 1
-let g:UltiSnipsSnippetsDir = '~/.config/nvim/UltiSnips/'
-let g:UltiSnipsExpandTrigger="<c-l>"
-let g:UltiSnipsJumpForwardTrigger="<c-j>"
-let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
 " Autocomplete
 " let g:deoplete#enable_at_startup = 1
@@ -269,6 +269,8 @@ autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
 autocmd FileType vue syntax sync fromstart
 au BufRead,BufNewFile *.js,*.ts,*.vue,*.tsx,*.scss,*.ejs,*.json setl sw=2 sts=2 et
 au BufRead,BufNewFile *.coffee,*.sass setl noexpandtab
+autocmd FileType scss setl iskeyword+=@-@
+
 " au BufNewFile,BufRead *.ejs set filetype=javascript.jsx
 
 let g:javascript_plugin_jsdoc = 1
@@ -334,7 +336,7 @@ endfunction
 
 "CoC
 " Use <c-space> to trigger completion.
-inoremap <silent><expr> <c-space> coc#refresh()
+inoremap <silent><expr> <leader><TAB> coc#refresh()
 
 " Use `[g` and `]g` to navigate diagnostics
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
@@ -357,10 +359,6 @@ augroup mygroup
   " Update signature help on jump placeholder.
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
-
-" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
-" Coc only does snippet and additional edit on confirm.
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 " Go to
 nmap <silent> gd <Plug>(coc-definition)

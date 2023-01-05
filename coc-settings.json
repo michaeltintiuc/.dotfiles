@@ -1,10 +1,8 @@
 {
-  "suggest.echodocSupport": true,
-  "suggest.maxCompleteItemCount": 20,
-  "coc.preferences.diagnostic.enableMessage": false,
   "coc.preferences.formatOnSaveFiletypes": [
     "h",
     "json",
+    "typescript",
     "typescriptreact",
     "javascriptreact",
     "typescript.tsx",
@@ -13,7 +11,30 @@
     "go",
     "dart"
   ],
-  "eslint.filetypes": [
+  "css.lint.argumentsInColorFunction": "error",
+  "css.lint.boxModel": "ignore",
+  "css.lint.compatibleVendorPrefixes": "warning",
+  "css.lint.duplicateProperties": "error",
+  "css.lint.emptyRules": "error",
+  "css.lint.float": "warning",
+  "css.lint.fontFaceProperties": "warning",
+  "css.lint.hexColorLength": "error",
+  "css.lint.idSelector": "error",
+  "css.lint.ieHack": "error",
+  "css.lint.importStatement": "ignore",
+  "css.lint.important": "warning",
+  "css.lint.propertyIgnoredDueToDisplay": "warning",
+  "css.lint.universalSelector": "error",
+  "css.lint.unknownProperties": "warning",
+  "css.lint.unknownVendorSpecificProperties": "ignore",
+  "css.lint.vendorPrefix": "warning",
+  "css.lint.zeroUnits": "error",
+  "css.validate": true,
+  "diagnostic.errorSign": "ε",
+  "diagnostic.infoSign": "•",
+  "diagnostic.warningSign": "ω",
+  "eslint.autoFixOnSave": true,
+  "eslint.validate": [
     "javascript",
     "typescript",
     "typescriptreact",
@@ -21,46 +42,129 @@
     "typescript.tsx",
     "vue"
   ],
-  "eslint.autoFixOnSave": true,
-  "tslint.autoFixOnSave": true,
-  "tslint.suppressWhileTypeErrorsPresent": true,
-  "tsserver.log": "verbose",
-  "prettier.eslintIntegration": true,
-  "prettier.stylelintIntegration": true,
-  "diagnostic.errorSign": "ε",
-  "diagnostic.warningSign": "ω",
-  "diagnostic.infoSign": "•",
-  "vetur.format.defaultFormatter.html": "prettier",
   "flutter.lsp.initialization.onlyAnalyzeProjectsWithOpenFiles": false,
+  "html.autoClosingTags": true,
+  "html.format.enable": true,
+  "html.format.extraLiners": "",
+  "html.format.indentHandlebars": true,
+  "html.format.indentInnerHtml": true,
+  "html.format.maxPreserveNewLines": 1,
+  "html.format.preserveNewLines": true,
+  "html.format.unformatted": "a, abbr, acronym, b, bdo, big, br, button, cite, code, dfn, em, i, img, input, kbd, label, map, object, q, samp, script, select, small, span, strong, sub, sup, textarea, tt, var",
+  "html.format.wrapAttributes": "auto",
+  "html.format.wrapAttributesIndentSize": null,
+  "html.format.wrapLineLength": 0,
+  "html.validate.scripts": true,
+  "html.validate.styles": true,
+  "javascript.format.insertSpaceAfterCommaDelimiter": true,
+  "javascript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": true,
+  "javascript.format.insertSpaceAfterKeywordsInControlFlowStatements": true,
+  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingEmptyBraces": true,
+  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
+  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyParenthesis": false,
+  "javascript.format.insertSpaceAfterSemicolonInForStatements": true,
+  "javascript.format.insertSpaceBeforeAndAfterBinaryOperators": true,
+  "javascript.format.placeOpenBraceOnNewLineForControlBlocks": false,
+  "javascript.format.placeOpenBraceOnNewLineForFunctions": false,
+  "javascript.format.semicolons": "insert",
+  "javascript.preferences.importModuleSpecifier": "relative",
+  "javascript.preferences.importModuleSpecifierEnding": "minimal",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "javascript.validate.enable": true,
+  "json.format.enable": true,
+  "json.schemaDownload.enable": true,
   "languageserver": {
-    "golang": {
-      "command": "gopls",
-      "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
-      "filetypes": ["go"],
-      "initializationOptions": {
-        "usePlaceholders": true
-      }
+    "bash": {
+      "args": [
+        "start"
+      ],
+      "command": "bash-language-server",
+      "filetypes": [
+        "sh"
+      ],
+      "ignoredRootPaths": [
+        "~"
+      ]
     },
     "ccls": {
       "command": "ccls",
-      "filetypes": ["c", "cpp", "h"],
-      "rootPatterns": [".ccls-root", "compile_commands.json", ".git"],
+      "filetypes": [
+        "c",
+        "cpp",
+        "h"
+      ],
       "initializationOptions": {
         "cache": {
           "directory": ".ccls-cache"
         }
-      }
-    },
-    "bash": {
-      "command": "bash-language-server",
-      "args": ["start"],
-      "filetypes": ["sh"],
-      "ignoredRootPaths": ["~"]
+      },
+      "rootPatterns": [
+        ".ccls-root",
+        "compile_commands.json",
+        ".git"
+      ]
     },
     "godot": {
+      "filetypes": [
+        "gdscript",
+        "gd"
+      ],
       "host": "127.0.0.1",
-      "filetypes": ["gdscript", "gd"],
       "port": 6008
+    },
+    "golang": {
+      "command": "gopls",
+      "filetypes": [
+        "go"
+      ],
+      "initializationOptions": {
+        "usePlaceholders": true
+      },
+      "rootPatterns": [
+        "go.mod",
+        ".vim/",
+        ".git/",
+        ".hg/"
+      ]
     }
-  }
+  },
+  "scss.lint.argumentsInColorFunction": "error",
+  "scss.lint.boxModel": "ignore",
+  "scss.lint.compatibleVendorPrefixes": "warning",
+  "scss.lint.duplicateProperties": "error",
+  "scss.lint.emptyRules": "error",
+  "scss.lint.float": "warning",
+  "scss.lint.fontFaceProperties": "warning",
+  "scss.lint.hexColorLength": "error",
+  "scss.lint.idSelector": "error",
+  "scss.lint.ieHack": "error",
+  "scss.lint.importStatement": "ignore",
+  "scss.lint.important": "warning",
+  "scss.lint.propertyIgnoredDueToDisplay": "warning",
+  "scss.lint.universalSelector": "error",
+  "scss.lint.unknownProperties": "warning",
+  "scss.lint.unknownVendorSpecificProperties": "ignore",
+  "scss.lint.vendorPrefix": "warning",
+  "scss.lint.zeroUnits": "error",
+  "scss.validate": true,
+  "suggest.maxCompleteItemCount": 20,
+  "tsserver.log": "off",
+  "typescript.format.insertSpaceAfterCommaDelimiter": true,
+  "typescript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": true,
+  "typescript.format.insertSpaceAfterKeywordsInControlFlowStatements": true,
+  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingEmptyBraces": true,
+  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingJsxExpressionBraces": true,
+  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
+  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyParenthesis": false,
+  "typescript.format.insertSpaceAfterSemicolonInForStatements": true,
+  "typescript.format.insertSpaceBeforeAndAfterBinaryOperators": true,
+  "typescript.format.placeOpenBraceOnNewLineForControlBlocks": false,
+  "typescript.format.placeOpenBraceOnNewLineForFunctions": false,
+  "typescript.format.semicolons": "insert",
+  "typescript.preferences.importModuleSpecifier": "relative",
+  "typescript.preferences.importModuleSpecifierEnding": "minimal",
+  "typescript.suggest.completeFunctionCalls": true,
+  "typescript.updateImportsOnFileMove.enabled": true,
+  "typescript.validate.enable": true,
+  "vetur.format.defaultFormatter.html": "prettier"
 }

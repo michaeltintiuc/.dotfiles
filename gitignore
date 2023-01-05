@@ -9,6 +9,7 @@
 *@neomake*
 .tern-*
 compile_commands.json
+.exrc
 
 # Compiled source #
 ###################
