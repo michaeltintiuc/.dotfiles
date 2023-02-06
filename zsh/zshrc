@@ -98,9 +98,6 @@ fi
 source $ZSH/oh-my-zsh.sh
 source $HOME/.dotfiles/zsh/aliases
 
-# Completion for kitty
-kitty + complete setup zsh | source /dev/stdin
-
 [ -f ~/.fzf/shell/completion.zsh ] && source ~/.fzf/shell/completion.zsh
 [ -f ~/.fzf/shell/key-bindings.zsh ] && source ~/.fzf/shell/key-bindings.zsh
 

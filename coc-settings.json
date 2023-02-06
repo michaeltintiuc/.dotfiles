@@ -75,57 +75,33 @@
   "json.schemaDownload.enable": true,
   "languageserver": {
     "bash": {
-      "args": [
-        "start"
-      ],
+      "args": ["start"],
       "command": "bash-language-server",
-      "filetypes": [
-        "sh"
-      ],
-      "ignoredRootPaths": [
-        "~"
-      ]
+      "filetypes": ["sh"],
+      "ignoredRootPaths": ["~"]
     },
     "ccls": {
       "command": "ccls",
-      "filetypes": [
-        "c",
-        "cpp",
-        "h"
-      ],
+      "filetypes": ["c", "cpp", "h"],
       "initializationOptions": {
         "cache": {
           "directory": ".ccls-cache"
         }
       },
-      "rootPatterns": [
-        ".ccls-root",
-        "compile_commands.json",
-        ".git"
-      ]
+      "rootPatterns": [".ccls-root", "compile_commands.json", ".git"]
     },
     "godot": {
-      "filetypes": [
-        "gdscript",
-        "gd"
-      ],
+      "filetypes": ["gdscript", "gd"],
       "host": "127.0.0.1",
-      "port": 6008
+      "port": 6005
     },
     "golang": {
       "command": "gopls",
-      "filetypes": [
-        "go"
-      ],
+      "filetypes": ["go"],
       "initializationOptions": {
         "usePlaceholders": true
       },
-      "rootPatterns": [
-        "go.mod",
-        ".vim/",
-        ".git/",
-        ".hg/"
-      ]
+      "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"]
     }
   },
   "scss.lint.argumentsInColorFunction": "error",
