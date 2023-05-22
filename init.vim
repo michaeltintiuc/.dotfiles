@@ -427,7 +427,7 @@ let g:vista#renderer#icons = {
 let g:dart_style_guide = 2
 let g:dart_format_on_save = 1
 
-let g:godot_executable = "flatpak run org.godotengine.Godot -d --debug-collisions --debug-navigation"
+let g:godot_executable = "/usr/bin/godot -d"
 func! GodotSettings() abort
     setlocal foldmethod=expr
     setlocal tabstop=4
@@ -437,5 +437,5 @@ func! GodotSettings() abort
     nnoremap <buffer> <F7> :GodotRunFZF<CR>
 endfunc
 augroup godot | au!
-    au FileType gdscript call GodotSettings()
+    au FileType gdscript,gdshader,gdshaderinc call GodotSettings()
 augroup end

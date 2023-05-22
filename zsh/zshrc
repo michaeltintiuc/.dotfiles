@@ -23,9 +23,10 @@ export IDF_PATH="$HOME/esp/esp-idf"
 export ANDROID_TOOLS_PATH=$HOME/Android/Sdk/platform-tools
 export RUST_PATH=$HOME/.cargo/bin
 export DART_PUB_PATH=$HOME/.pub-cache/bin
+export DOTNET="$HOME/.dotnet/tools"
 export PATH=$PATH:$HOME/.config/composer/vendor/bin:$HOME/bin:$FZF_BIN_PATH:$ANDROID_TOOLS_PATH:$DART_PUB_PATH
 export PATH=$PATH:$LOCALBIN:$GOROOT:$GOBIN:$IDF_PATH:$RUST_PATH
-export PATH=$PATH:$LOCALBIN:$GOROOT:$GOBIN:$ESPBIN:$IDF_PATH
+export PATH=$PATH:$LOCALBIN:$GOROOT:$GOBIN:$ESPBIN:$IDF_PATH:$DOTNET
 
 export KEYTIMEOUT=1
 
@@ -43,18 +44,13 @@ fi
 # Latest Golang bins
 export PATH=$PATH:/usr/lib/go-1.13/bin
 
-# NVM
-export NVM_DIR="$HOME/.nvm"
-[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-
 # NPM
 # https://github.com/sindresorhus/guides/blob/master/npm-global-without-sudo.md
-# NPM_PACKAGES="${HOME}/.npm-packages"
-# export PATH="$NPM_PACKAGES/bin:$PATH"
+NPM_PACKAGES="${HOME}/.npm-packages"
+export PATH="$NPM_PACKAGES/bin:$PATH"
 # Unset manpath so we can inherit from /etc/manpath via the `manpath` command
-# unset MANPATH # delete if you already modified MANPATH elsewhere in your config
-# export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
+unset MANPATH # delete if you already modified MANPATH elsewhere in your config
+export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
 
 function ttmux() {
     echo "$1"
