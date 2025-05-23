@@ -1,2 +1,8 @@
 [core]
 	excludesfile = $HOME/.gitignore
+[user]
+	email = contact@michaeltintiuc.com
+	name = Michael Tintiuc
+	signingkey = 58E8AEF0C9AA2829
+[commit]
+	gpgsign = true

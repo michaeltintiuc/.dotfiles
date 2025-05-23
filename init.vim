@@ -41,6 +41,7 @@ set synmaxcol=2048
 set lazyredraw
 set updatetime=100
 set termguicolors
+set guicursor=
 
 " Spelunker
 set nospell
@@ -225,8 +226,8 @@ vnoremap <silent> p p`]
 nnoremap <silent> p p`]
 
 " Key mapping
-map <leader>s :source ~/.dotfiles/init.vim<cr>
-map <leader>e :e! ~/.dotfiles/init.vim<cr>
+map <leader>s :source ~/code/.dotfiles/init.vim<cr>
+map <leader>e :e! ~/code/.dotfiles/init.vim<cr>
 map <leader>l :nohlsearch<cr>
 map <leader>pi :PlugInstall<cr>
 map <F6> :set spell!<cr>
